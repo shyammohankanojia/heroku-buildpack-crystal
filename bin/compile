@@ -15,7 +15,7 @@ curl -sL $CRYSTAL_URL | tar xz -C $CRYSTAL_DIR --strip-components=1
 # Build the project
 cd $BUILD_DIR
 
-if [ -f shard.lock ]; then
+if [ -f shard.yml ]; then
   echo "-----> Installing Dependencies"
   $CRYSTAL_DIR/bin/crystal deps install
 fi
