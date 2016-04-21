@@ -15,10 +15,10 @@ curl -sL $CRYSTAL_URL | tar xz -C $CRYSTAL_DIR --strip-components=1
 # Build the project
 cd $BUILD_DIR
 
-if [ -f Projectfile ]; then
+if [ -f shard.lock ]; then
   echo "-----> Installing Dependencies"
-  $CRYSTAL_DIR/bin/crystal deps
+  $CRYSTAL_DIR/bin/crystal deps install
 fi
 
 echo "-----> Compiling src/main.cr"
-$CRYSTAL_DIR/bin/crystal build src/main.cr --release
+make run
